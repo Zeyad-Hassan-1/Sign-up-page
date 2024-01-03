@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url('Fonts/Norse-Bold.otf') format('opentype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url(images/halie-west-25xggax4bSA-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30% 100%;
+    height: 100vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    position: relative;
+    height: 100px;
+    top: calc(35% - 100px);
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: #00000070;
+    justify-content: center;
+    font-family: Norse-Bold;
+}
+
+label {
+    display: block;
+    color: rgb(59 68 80);
+    font-size: small;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30%;
+    padding-top: 15px;
+}
+
+form div {
+    width: 40%;
+}
+
+input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid rgb(87, 94, 105);
+    border-radius: 3px;
+}
+
+.header {
+    height: 35%;
+    background-color: rgb(249, 250, 251);
+}
+
+.submition {
+    height: 35%;
+    background-color: rgb(249, 250, 251);
+    box-shadow: inset 0 1px 8px 0 rgb(0 0 0 / 10%);
+    padding: 30px 0px 0px 70px;
+}
+
+fieldset {
+    width: 70%;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 15px 15px 70px;
+}
+
+.head {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-bottom: 50px;
+    padding: 0 100px 50px 70px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.create-buttuon {
+    background-color: rgb(89 109 72);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+a {
+    color: rgb(99 118 83);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input:scope {
+    border:1px solid blue;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.log p{
+    margin-bottom: 20px;
+    color: white;
+}
+
+.logo p a{
+    color: white;
+    padding-left: 5px;
+}
+
+input:focus{
+    border: 1px solid blue;
+    outline: none;
+}
