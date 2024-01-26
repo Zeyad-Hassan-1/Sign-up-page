@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-up</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign-up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <div class="aside">
-      <div class="logo">
-        <img src="images/logo.png" alt="logo" style="height: 100%" />
-        <h1 style="font-size: 60px">ODIN</h1>
-      </div>
-      <p style="color: white; margin-bottom: 20px; font-family: Norse-Bold;">
-        Created by @<a href="https://github.com/Zeyad-Hassan-1" target="_blank"
-          style="padding-left: 5px; color: white; font-family: Norse-Bold;">ZeyadHasan</a>
-      </p>
+<body>
+  <div class="aside">
+    <div class="logo">
+      <img src="images/logo.png" alt="logo" style="height: 100%" />
+      <h1 style="font-size: 60px">ODIN</h1>
     </div>
-    <div class="content" style="width: 70%">
-      <div class="header">
-        <div class="head">
-          <p>
-            This is not a real online service! You know you need something<br />
-            like this in your life to help you realize your deepest
-            dreams.<br />
-            Sign up now to get started.
-          </p>
-          <p>You know you want to.</p>
-        </div>
+    <p style="color: white; margin-bottom: 20px; font-family: Norse-Bold;">
+      Created by @<a href="https://github.com/Zeyad-Hassan-1" target="_blank"
+        style="padding-left: 5px; color: white; font-family: Norse-Bold;">ZeyadHasan</a>
+    </p>
+  </div>
+  <div class="content" style="width: 70%">
+    <div class="header">
+      <div class="head">
+        <p>
+          This is not a real online service! You know you need something<br />
+          like this in your life to help you realize your deepest
+          dreams.<br />
+          Sign up now to get started.
+        </p>
+        <p>You know you want to.</p>
       </div>
-      <form action>
-        <fieldset>
-          <legend style="font-size: larger">Let`s Do This !</legend>
-          <div class="first-name">
-            <label for="first-name">First Name</label>
-            <input type="text" name="first-name" id="first-name" />
-          </div>
-          <div class="lsat-name">
-            <label for="last-name">Last Name</label>
-            <input type="text" name="last-name" id="last-name" />
-          </div>
-          <div class="email">
-            <label for="email">Email Adress</label>
-            <input type="email" name="email" id="email" />
-          </div>
-          <div class="phone-nmuber">
-            <label for="phone">Phone Number</label>
-            <input type="number" name="phone" id="phone" />
-          </div>
-          <div class="password">
-            <label for="password">Password</label>
-            <input type="password" name="pass" id="pass" />
-          </div>
-          <div class="confirm-password">
-            <label for="conf-pass">Confirm Password</label>
-            <input type="password" name="conf-pass" id="conf-pass" />
-          </div>
-        </fieldset>
-      </form>
+    </div>
+    <form action>
+      <fieldset>
+        <legend style="font-size: larger">Let`s Do This !</legend>
+        <div class="first-name">
+          <label for="first-name">*First Name</label>
+          <input type="text" name="first-name" id="first-name" required />
+        </div>
+        <div class="last-name">
+          <label for="last-name">*Last Name</label>
+          <input type="text" name="last-name" id="last-name" required />
+        </div>
+        <div class="email">
+          <label for="email">*Email Adress</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="phone-nmuber">
+          <label for="phone">Phone Number</label>
+          <input type="number" name="phone" id="phone" />
+        </div>
+        <div class="password">
+          <label for="password">*Password</label>
+          <input type="password" name="pass" id="pass" 
+          pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/" 
+          required />
+        </div>
+        <div class="confirm-password">
+          <label for="conf-pass">*Confirm Password</label>
+          <input type="password" name="conf-pass" id="conf-pass" required />
+        </div>
+      </fieldset>
       <div class="submition">
         <button class="create-buttuon" type="submit">Create Account</button>
         <p style="font-weight: bold">
           Already have an account ? <a href>Log in</a>
         </p>
       </div>
-    </div>
-  </body>
+    </form>
+  </div>
+</body>
 
 </html>
