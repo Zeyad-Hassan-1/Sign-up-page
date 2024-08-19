@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign-up</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,16 +26,15 @@
       <div class="head">
         <p>
           This is not a real online service! You know you need something<br />
-          like this in your life to help you realize your deepest
-          dreams.<br />
+          like this in your life to help you realize your deepest dreams.<br />
           Sign up now to get started.
         </p>
         <p>You know you want to.</p>
       </div>
     </div>
-    <form action>
+    <form action="#">
       <fieldset>
-        <legend style="font-size: larger">Let`s Do This !</legend>
+        <legend style="font-size: larger">Let`s Do This!</legend>
         <div class="first-name">
           <label for="first-name">*First Name</label>
           <input type="text" name="first-name" id="first-name" required />
@@ -43,32 +44,82 @@
           <input type="text" name="last-name" id="last-name" required />
         </div>
         <div class="email">
-          <label for="email">*Email Adress</label>
+          <label for="email">*Email Address</label>
           <input type="email" name="email" id="email" required />
         </div>
-        <div class="phone-nmuber">
+        <div class="phone-number">
           <label for="phone">Phone Number</label>
           <input type="number" name="phone" id="phone" />
         </div>
+
         <div class="password">
           <label for="password">*Password</label>
-          <input type="password" name="pass" id="pass" 
-          pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/" 
-          required />
+          <div class="password-container">
+            <input type="password" name="pass" id="pass"
+              pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$" required />
+            <i class="fa-solid fa-eye toggle-password" data-target="pass"></i>
+          </div>
         </div>
         <div class="confirm-password">
           <label for="conf-pass">*Confirm Password</label>
-          <input type="password" name="conf-pass" id="conf-pass" required />
+          <div class="password-container">
+            <input type="password" name="conf-pass" id="conf-pass" required />
+            <i class="fa-solid fa-eye toggle-password" data-target="conf-pass"></i>
+          </div>
+          <p id="error-message" style="color: red; display: none;">Passwords do not match!</p>
         </div>
+
       </fieldset>
       <div class="submition">
         <button class="create-buttuon" type="submit">Create Account</button>
         <p style="font-weight: bold">
-          Already have an account ? <a href>Log in</a>
+          Already have an account? <a href="#">Log in</a>
         </p>
       </div>
     </form>
   </div>
+
+  <script>
+
+    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+
+    togglePasswordIcons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        const targetField = document.getElementById(icon.dataset.target);
+        const isPasswordVisible = targetField.type === 'text';
+
+        // Toggle visibility of the password fields
+        togglePasswordIcons.forEach(ic => {
+          const field = document.getElementById(ic.dataset.target);
+          if (isPasswordVisible) {
+            field.type = 'password';
+            ic.classList.remove('fa-eye-slash');
+            ic.classList.add('fa-eye');
+          } else {
+            field.type = 'text';
+            ic.classList.remove('fa-eye');
+            ic.classList.add('fa-eye-slash');
+          }
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const form = document.querySelector('form');
+      const password = document.getElementById('pass');
+      const confirmPassword = document.getElementById('conf-pass');
+      const errorMessage = document.getElementById('error-message');
+
+      form.addEventListener('submit', (e) => {
+        if (password.value !== confirmPassword.value) {
+          e.preventDefault(); // منع إرسال النموذج إذا كانت كلمات المرور غير متطابقة
+          errorMessage.style.display = 'block'; // عرض رسالة الخطأ
+        } else {
+          errorMessage.style.display = 'none'; // إخفاء رسالة الخطأ إذا كانت متطابقة
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
